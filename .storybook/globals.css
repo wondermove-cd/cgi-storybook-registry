@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* 🎯 목적: 스포카 한 산스 Neo 웹폰트 로드
+ * 📝 출처: https://spoqa.github.io/spoqa-han-sans/
+ * 🔄 지원: 한글, 영문, 일본어, 숫자
+ */
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css");
+
 /* Tailwind dark mode variant: .dark 또는 .theme-default-dark 클래스를 가진 요소와 그 자식 모두에 적용 */
 @custom-variant dark (&:where(.dark, .dark *, .theme-default-dark, .theme-default-dark *));
 
@@ -310,10 +316,11 @@ html.theme-violet-dark {
 /* 🎯 목적: Tailwind v4 테마 시스템 설정 - 폰트와 radius만 정의
  * 📝 주의: 색상 변수는 @theme inline 블록에서 동적 참조로 정의
  * 🔄 변경이력: 2025-10-12 - @theme inline으로 색상 변수 이동 (다중 테마 지원)
+ * 🔄 변경이력: 2025-12-09 - 스포카 한 산스 Neo 폰트로 변경
  */
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   --radius: 0.65rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
